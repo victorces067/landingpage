@@ -1,0 +1,380 @@
+:root {
+    --primary: #dc2626;
+    --secondary: #1e293b;
+    --accent: #f59e0b;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    background: var(--secondary);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    padding: 1rem 0;
+}
+
+.navbar.scrolled {
+    padding: 0.5rem 0;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: white !important;
+}
+
+.navbar-brand i {
+    color: var(--primary);
+}
+
+.nav-link {
+    color: rgba(255,255,255,0.9) !important;
+    transition: all 0.3s;
+    font-weight: 500;
+    margin: 0 10px;
+}
+
+.nav-link:hover {
+    color: var(--accent) !important;
+    transform: translateY(-2px);
+}
+
+/* Home Section */
+#home {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(220, 38, 38, 0.85)), 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%231e293b" width="1200" height="800"/></svg>');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 150px 0 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(220, 38, 38, 0.2), transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.2), transparent 50%);
+}
+
+#home .container {
+    position: relative;
+    z-index: 2;
+}
+
+#home h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease;
+}
+
+#home p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    animation: fadeInUp 1s ease 0.2s both;
+}
+
+.btn-primary-custom {
+    background: var(--primary);
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s;
+    animation: fadeInUp 1s ease 0.4s both;
+}
+
+.btn-primary-custom:hover {
+    background: #b91c1c;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(220, 38, 38, 0.3);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apresentação Section */
+#apresentacao {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+#apresentacao h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--secondary);
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.feature-box {
+    text-align: center;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s;
+    margin-bottom: 30px;
+    height: 100%;
+}
+
+.feature-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(220, 38, 38, 0.15);
+}
+
+.feature-box i {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.feature-box h4 {
+    color: var(--secondary);
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Galeria Section */
+#galeria {
+    padding: 80px 0;
+    background: white;
+}
+
+#galeria h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--secondary);
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.vehicle-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    margin-bottom: 30px;
+}
+
+.vehicle-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.vehicle-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.vehicle-card .card-body {
+    padding: 25px;
+}
+
+.vehicle-card .badge {
+    background: var(--primary);
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.vehicle-card .price {
+    color: var(--primary);
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.vehicle-details {
+    display: none;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px solid #f1f5f9;
+}
+
+.vehicle-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.vehicle-details ul li {
+    padding: 5px 0;
+    color: #64748b;
+}
+
+.vehicle-details ul li i {
+    color: var(--primary);
+    margin-right: 10px;
+}
+
+.btn-details {
+    background: var(--secondary);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
+.btn-details:hover {
+    background: var(--primary);
+}
+
+/* Formulário Section */
+#contato {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #1e293b, #334155);
+    color: white;
+}
+
+#contato h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#contato p {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.form-control {
+    border-radius: 10px;
+    padding: 12px 20px;
+    border: 2px solid #475569;
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.form-control:focus {
+    background: rgba(255,255,255,0.15);
+    border-color: var(--primary);
+    color: white;
+    box-shadow: 0 0 0 0.2rem rgba(220, 38, 38, 0.25);
+}
+
+.form-control::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+.form-label {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.btn-submit {
+    background: var(--primary);
+    border: none;
+    padding: 15px 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    background: #b91c1c;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(220, 38, 38, 0.3);
+}
+
+.error-message {
+    color: var(--accent);
+    font-size: 0.9rem;
+    margin-top: 5px;
+    display: none;
+}
+
+/* Footer */
+footer {
+    background: #0f172a;
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.team-member {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.team-member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid var(--primary);
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.team-member h5 {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    color: white;
+    margin: 0 5px;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.social-links a:hover {
+    background: var(--primary);
+    transform: translateY(-3px);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #94a3b8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #home h1 {
+        font-size: 2.5rem;
+    }
+    
+    #home p {
+        font-size: 1.1rem;
+    }
+}
+
